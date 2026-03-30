@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
     if (!isMatch) return res.status(401).json({ message: "Invalid Credentials" });
 
     const token = generateToken(user);
-    res.join({ token });
+    res.json({ token });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
